@@ -13,7 +13,9 @@ router.get('/', (req, res) => {
 })
 
 // router.get('/', (req, res) => {
-//     Tasks.findTask()
+//     const { id } = req.params;
+
+//     Tasks.findTask(id)
 //         .then(tasks => {
 //             res.json(tasks);
 //         })

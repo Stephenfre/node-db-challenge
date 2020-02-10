@@ -1,5 +1,6 @@
 const express = require('express');
 const Projects = require('./projects-model.js');
+const Tasks = require('./tasks-model.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -27,6 +28,23 @@ router.get('/:id', (req, res) => {
             res.status(500).json({ message: 'Failed to get projects', err });
         });
 });
+
+
+router.get('/:id/tasks', (req, res) => {
+    const { id } = req.params;
+
+    Tasks.findTask(id)
+        .then(tasks => {
+            if (tasks) {
+                res.json(tasks);
+            } else {
+                res.status(404).json({ message: 'could not find task ' })
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        })
+})
 
 router.post('/', (req, res) => {
     const projectsData = req.body;
