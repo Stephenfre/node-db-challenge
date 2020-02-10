@@ -40,7 +40,7 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
-<!--  -->
+<!-- SQL is a language used for managing data in a relational database. There are other languagues that work with relational databases, and there are other kinds of databases. -->
 
 - [ ] Why do tables need a `primary key`?
 
